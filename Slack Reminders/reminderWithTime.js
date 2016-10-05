@@ -49,7 +49,7 @@ function sendToSlack() {
       console.log(this.responseText);
     }
   };
-  var xhttpMessage = 'https://slack.com/api/reminders.add?token=*&text=' + text + '&time=' + date + '&channel=C2K4JR8LW&pretty=1';
+  var xhttpMessage = 'https://slack.com/api/reminders.add?token*&text=' + text + '&time=' + date + '&channel=C2K4JR8LW&pretty=1';
   xhttp.open('POST', xhttpMessage);
   /*  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); */
   xhttp.send();

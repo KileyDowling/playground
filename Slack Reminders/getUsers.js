@@ -21,7 +21,8 @@ function getUsers() {
     var selection ="";
     for (i = 0; i < array.length; i++) {
       var username = array[i].name;
-     selection += "<option value=" + username + ">" + username + "</option>";
+      var fullname = array[i].profile.first_name + array[i].profile.last_name;
+     selection += "<option value=" + fullname + ">" + fullname + "</option>";
     }
     return selection;
   }
