@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div id="demo"><h2>Draft your reminder below</h2></div>
+<div id="msgSent"></div>
+<form>
+<label>Name: </label> <input id="name">
+  </br>
+<label>Type of Request: </label>
+ <select id="typeOfRequest">
+  <option value="PTO">PTO</option>
+  <option value="WFH">WFH</option>
+  <option value="working remotely">Remote</option>
+  <option value="OOO">OOO</option>
+</select>
+  </br>
+  <label>Date: </label> <input type="date" id="date">
+  </br>
+  <label>Time: </label> <input type="time" id="time">
+  </br>
+  <label>If only during a set time period, include here: </label> <input type="text" id="amountOfTime">
+  </br>
+  <label>Additional Note: </label> <input type="text" id="note">
+
+<button id="button" type="button" onclick="sendToSlack()">Submit</button>
+</form>
+
+<script src="reminderWithTime.js">
+
+</script>
+
+</body>
+</html>
+
