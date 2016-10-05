@@ -1,4 +1,4 @@
-function sendToSlack() {
+function getUsers() {
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -11,9 +11,10 @@ function sendToSlack() {
       var finalString = getMembers(members);
       console.log(finalString);
       if(finalString !=null) {
-        document.getElementById("selectUser").innerHTML = finalString;
+        document.getElementById("name").innerHTML = finalString;
       }
-    }
+
+   }
   };
 
   function getMembers(array) {
