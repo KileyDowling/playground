@@ -11,7 +11,7 @@ function getUsers() {
       var finalString = getMembers(members);
       console.log(finalString);
       if(finalString !=null) {
-        document.getElementById("name").innerHTML = finalString;
+        document.getElementById("selectUser").innerHTML = finalString;
       }
 
    }
@@ -27,6 +27,6 @@ function getUsers() {
     return selection;
   }
 
-  xhttp.open('GET', 'https://slack.com/api/users.list?token=*&pretty=1');
+  xhttp.open('GET', 'https://slack.com/api/users.list?token=xoxp-87151022884-87165081527-87680550673-bd3ac6784f900c570fe77e339c07e07b&pretty=1');
   xhttp.send();
 }

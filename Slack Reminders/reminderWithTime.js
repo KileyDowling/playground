@@ -49,7 +49,7 @@ function sendToSlack() {
       console.log(this.responseText);
     }
   };
-  var xhttpMessage = 'https://slack.com/api/reminders.add?token*&text=' + text + '&time=' + date + '&channel=C2K4JR8LW&pretty=1';
+  var xhttpMessage = 'https://slack.com/api/reminders.add?token=xoxp-87151022884-87165081527-87680550673-bd3ac6784f900c570fe77e339c07e07b&text=' + text + '&time=' + date + '&channel=C2K4JR8LW&pretty=1';
   xhttp.open('POST', xhttpMessage);
   /*  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); */
   xhttp.send();
