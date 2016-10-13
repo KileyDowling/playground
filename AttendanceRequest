@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo"><h2>Draft your reminder below</h2></div>
+<div id="msgSent"></div>
+<h2>User: <span id="name"></span> </h2>
+  <br/>
+
+<label> I want to: </label>
+<select id="typeOfRequest">
+<option>Take time off</option>
+<option>Work from home</option>
+</select>
+  <br/>
+
+<h3>Dates</h3>
+<label>From</label>
+  <input type="date" id="fromDate" />
+<label>To</label>
+  <input type="date" id="toDate" />
+  <br/>
+
+  <h3>Time period</h3>
+<select id="timePeriod">
+	<option>All day</option>
+	<option>Morning</option>
+	<option>Afternoon</option>
+</select>
+
+  <h3>Note</h3>
+<textarea  id="note" placeholder="Additional information.."></textarea>
+  <button id="button" type="button" onclick="SubmitRequest()">Submit</button>
+
+</form>
+
+<script>
+document.title="Attendance Request";
+
+
+/*
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { */
+
+    	function SubmitRequest() {
+
+	  var name = document.getElementById("name").value;
+	  var e = document.getElementById("typeOfRequest");
+	  var requestType = e.options[e.selectedIndex].value;
+	  var t = document.getElementById("timePeriod");
+	  var timePeriod = t.options[t.selectedIndex].value;
+	  var additionalNote = "";
+	  additionalNote = document.getElementById("note").value;
+
+	  var xhttp = new XMLHttpRequest();
+
+	  var fromDate = document.getElementById("fromDate").value;
+	  var toDate = document.getElementById("toDate").value;
+
+	  fromDateFormatted = new Date(fromDate).toDateString();
+	  toDateFormatted = new Date(toDate).toDateString();
+
+
+	  if(fromDateFormatted != toDateFormatted) {
+	  	var fromDateFormatted = fromDateFormatted + " to " + toDateFormatted;
+	  }
+	  var sentMsg ="<strong>Request Type:</strong> " + requestType + "</br> <strong>Date(s):</strong> " + fromDateFormatted + "<strong></br> Time Period:</strong> " + timePeriod + "</br> <strong>Note:</strong> " + additionalNote;
+
+
+      document.getElementById("demo").innerHTML = "<h2>You successfully sent an update to your Slack team!</h2>";
+      document.getElementById("button").innerHTML = "Send another";
+      document.getElementById("msgSent").innerHTML = sentMsg;
+
+      reset("typeOfRequest");
+      reset("fromDate");
+      reset("toDate");
+      reset("timePeriod");
+      reset("note");
+
+    }
+
+
+function reset(idName) {
+  document.getElementById(idName).value = "";
+}
+</script>
+
+</body>
+</html>
